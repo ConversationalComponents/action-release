@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getsentry/action-release.git"
+    "url": "git+https://github.com/lasalefamine/action-release.git"
   },
   "keywords": [
     "actions",
     "sentry",
     "release"
   ],
-  "author": "Sentry",
+  "author": "LasaleFamine",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.4",

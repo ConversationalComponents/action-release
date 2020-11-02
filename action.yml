@@ -1,6 +1,6 @@
-name: 'Sentry Release'
-description: 'GitHub Action for creating a release on Sentry'
-author: 'Sentry'
+name: 'Sentry Release (with custom URL)'
+description: 'GitHub Action for creating a release on Sentry, also on-premise instances'
+author: 'LasaleFamine'
 inputs:
   environment:
     description: 'Set the environment for this release. E.g. "production" or "staging".'
@@ -28,4 +28,4 @@ runs:
   image: 'docker://sentryintegrations/sentry-github-action-release:latest'
 branding:
   icon: 'triangle'
-  color: 'purple'
+  color: 'red'

@@ -13,6 +13,7 @@ import * as validate from './validate';
     const shouldFinalize = validate.getShouldFinalize();
     const deployStartedAtOption = validate.getStartedAt();
     const setCommitsOption = validate.getSetCommitsOption();
+    const sentryURL = validate.getSentryURL();
 
     const version = await validate.getVersion();
 
@@ -30,7 +31,9 @@ import * as validate from './validate';
     }
 
     core.debug(`Adding deploy to release`);
+    core.debug(`Pushing to ${sentryURL}`);
     await cli.newDeploy(version, {
+      url: sentryURL,
       env: environment,
       ...(deployStartedAtOption && {started: deployStartedAtOption}),
     });

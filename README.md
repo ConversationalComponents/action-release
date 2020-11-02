@@ -1,5 +1,5 @@
-# Sentry Release GitHub Action
-Automatically create a Sentry release in a workflow. 
+# FORK of Sentry Release GitHub Action
+Automatically create a Sentry release in a workflow. **Also for on-premise instances**.
 
 A release is a version of your code that is deployed to an environment. When you give Sentry information about your releases, you unlock a number of new features:
  - Determine the issues and regressions introduced in a new release
@@ -30,6 +30,7 @@ Adding the following to your workflow will create a new Sentry release and tell 
     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
     SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+    SENTRY_URL: ${{ secrets.SENTRY_URL }}
   with:
     environment: production
 ```
@@ -43,6 +44,7 @@ The following are all _required_.
 |`SENTRY_AUTH_TOKEN`|Authentication token for Sentry. See [installation](#create-a-sentry-internal-integration).|
 |`SENTRY_ORG`|The slug of the organization name in Sentry.|
 |`SENTRY_PROJECT`|The slug of the project name in Sentry.|
+|`SENTRY_URL`|Url for on-premise Sentry.|
 #### Parameters
 |name|description|default|
 |---|---|---|
