@@ -25,7 +25,7 @@ Adding the following to your workflow will create a new Sentry release and tell 
 ```yaml
 - uses: actions/checkout@v2
 - name: Create Sentry release
-  uses: getsentry/action-release@v1
+  uses: lasalefamine/action-release@v1
   env:
     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
@@ -59,7 +59,7 @@ The following are all _required_.
 ### Examples
 - Create a new Sentry release for the `production` environment and upload JavaScript source maps from the `./lib` directory.
     ```yaml
-    - uses: getsentry/action-release@v1
+    - uses: lasalefamine/action-release@v1
       with:
         environment: 'production'
         sourcemaps: './lib'
@@ -67,7 +67,7 @@ The following are all _required_.
 
 - Create a new Sentry release for the `production` environment of your project at version `v1.0.1`.
     ```yaml
-    - uses: getsentry/action-release@v1
+    - uses: lasalefamine/action-release@v1
       with:
         environment: 'production'
         version: 'v1.0.1'
@@ -92,7 +92,7 @@ Otherwise it could fail at the `propose-version` step with the message:
     ```
 
 ## Contributing
-See the [Contributing Guide](https://github.com/getsentry/action-release/blob/master/CONTRIBUTING).
+See the [Contributing Guide](https://github.com/lasalefamine/action-release/blob/master/CONTRIBUTING).
 
 ## License
-See the [License File](https://github.com/getsentry/action-release/blob/master/LICENSE).
+See the [License File](https://github.com/lasalefamine/action-release/blob/master/LICENSE).
