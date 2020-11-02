@@ -129,6 +129,21 @@ export const getSetCommitsOption = (): 'auto' | 'skip' => {
 };
 
 /**
+ * Get hosted Sentry url or nothing.
+ * @throws
+ * @returns Promise<string | undefined>
+ */
+export const getSentryURL = (): string => {
+  const customURL = process.env['SENTRY_URL']
+
+  if (!customURL) {
+    core.debug('SENTRY_URL not provided. Will push on sentry.io...');
+  }
+
+  return customURL ?? 'https://sentry.io';
+};
+
+/**
  * Check for required environment variables.
  */
 export const checkEnvironmentVariables = (): void => {

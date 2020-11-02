@@ -8,7 +8,7 @@ import * as options from './options';
 
     // Validate options first so we can fail early.
     options.checkEnvironmentVariables();
-
+    const sentryURL = options.getSentryURL();
     const environment = options.getEnvironment();
     const sourcemaps = options.getSourcemaps();
     const shouldFinalize = options.getBooleanOption('finalize', true);
@@ -56,6 +56,7 @@ import * as options from './options';
     if (environment) {
       core.debug(`Adding deploy to release`);
       await cli.newDeploy(version, {
+        url: sentryURL,
         env: environment,
         ...(deployStartedAtOption && {started: deployStartedAtOption}),
       });
